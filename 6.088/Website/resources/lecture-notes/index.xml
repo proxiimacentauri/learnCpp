@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lecture Notes on MIT OpenCourseWare</title>
+    <link>/resources/lecture-notes/</link>
+    <description>Recent content in Lecture Notes on MIT OpenCourseWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/resources/lecture-notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 4: Object-oriented programming in C&#43;&#43;</title>
+      <link>/resources/mit6_088iap10_lec04/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_088iap10_lec04/data.json</guid>
+      <description>Lecture notes on introductory C++, encapsulation, classes, namespaces, constructors, destructors, memory management in C++ (new, delete), operator overloading, and standard input/output.</description>
+    </item>
+    
+    <item>
+      <title>Day 5: Inheritance &amp; Polymorphism</title>
+      <link>/resources/mit6_088iap10_lec05/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_088iap10_lec05/data.json</guid>
+      <description>Lecture notes on inheritance and polymorphism, templates, and standard library containers.</description>
+    </item>
+    
+    <item>
+      <title>Day 6: Miscellaneous Topics</title>
+      <link>/resources/mit6_088iap10_lec06/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_088iap10_lec06/data.json</guid>
+      <description>Lecture notes on polymorphism, namespaces, the Standard Template Library (STL), copying objects, and integer overﬂow,</description>
+    </item>
+    
+    <item>
+      <title>lec02</title>
+      <link>/resources/lec02/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lec02/data.json</guid>
+      <description>Supporting files for the second lecture session of the course. (This ZIP file contains: 1 .c file and 1 .h file.)</description>
+    </item>
+    
+    <item>
+      <title>lec04</title>
+      <link>/resources/lec04/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lec04/data.json</guid>
+      <description>Supporting files for the fourth lecture session of the course. (This Zip file contains: 3 .cc files and 2 .h files.)</description>
+    </item>
+    
+    <item>
+      <title>lec05</title>
+      <link>/resources/lec05/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lec05/data.json</guid>
+      <description>Supporting files for the fifth lecture session of the course. (This ZIP file contains: 4 .cc files and 3 .h files.)</description>
+    </item>
+    
+    <item>
+      <title>Lecture 1: The Abstract Memory Machine</title>
+      <link>/resources/mit6_088iap10_lec01/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_088iap10_lec01/data.json</guid>
+      <description>Lecture notes with an introduction to C/C++ programming and information on course goals, prerequisites, and administrative details for the course.</description>
+    </item>
+    
+    <item>
+      <title>Lecture 2: The Logistics of Pointers and Memory Management</title>
+      <link>/resources/mit6_088iap10_lec02/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_088iap10_lec02/data.json</guid>
+      <description>Lecture notes on the logistics of memory manipulation in C, pointers, the stack and heap, data structures, arrays and structs, and linked lists.</description>
+    </item>
+    
+    <item>
+      <title>Lecture 3: Oh, Say Can You C</title>
+      <link>/resources/mit6_088iap10_lec03/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit6_088iap10_lec03/data.json</guid>
+      <description>Lecture notes on advanced memory manipulation in C, double linked-list insert, inserting into a linked list using a double pointer, corner cases of using memory (when we actually need heap allocation), and the GNU Compiler Collection.</description>
+    </item>
+    
+    <item>
+      <title>Lecture Notes</title>
+      <link>/pages/lecture-notes/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pages/lecture-notes/data.json</guid>
+      <description>Lectures 1-3 were given by Jean Yang; lectures 4-6 were given by Eunsuk Kang.
+SES # TOPICS LECTURE NOTES SUPPORTING FILES 1 Motivation for using C/C++; discussion of where C and C++ sit in the abstraction hierarchy; writing our first C programs (PDF) 2 The logistics of memory manipulation in C (pointers, structs) (PDF) (ZIP) (This ZIP file contains: 1 .c file and 1 .h file.) 3 More advanced memory manipulation in C.</description>
+    </item>
+    
+  </channel>
+</rss>
