@@ -5,8 +5,8 @@
 	- Its a user-specified name to refer to a group of commands. Similar to a function in a programming language.
 	- A target is aligned on the left-hand column continous word ends with `(:)`
 	- When we call `make` we can specify a `target_name`
-		```
-		make target_name
+		```shell
+		$ make target_name
 		```
 	- `make` will check the `MakeFile` and execute the commands associated with that target.
 </br>
@@ -15,7 +15,7 @@
 - #### Source
 	- They are references to files or other targets.
 	- They represent pre-reqs / dependencies for the target they are associated with.
-	  ```
+	  ```make
 	  target1: target2
 		target1_command
       target2:
@@ -38,7 +38,7 @@
 		- Back to `default`.
 		</br>
 		</br>
-			```
+			```make
 				CC = gcc
 				CFLAGS  = -g -Wall
 
@@ -63,7 +63,7 @@
 
 
 	- Simple example to build an executable named myprog from myprog.c
-		```
+		```make
 			all: myprog.c
 				gcc -g -Wall -o myprog myprog.c
 
@@ -74,7 +74,7 @@
 	</br>
 
 	- More generic form of the above example:
-		```
+		```make
 			CC = gcc
 			CFLAGS = -g -Wall
 			TARGET = mprog
@@ -95,14 +95,14 @@
 
 - #### Dash Before a Cmd (`-`)
 	- A `(-)` before a command tells `make` to ignore errors that may occur during the execution of the command.
-		```
+		```make
 		clean:
 			-rm *.o
 		```
 
 - #### At Before a Cmd (`@`)
 	- A `(@)` before a command tells `make` to NOT print output to `stdout`.
-		```
+		```make
 		CC = gcc
 
 		all: program
@@ -134,13 +134,13 @@
 
 - #### Simple Assignment (`=`)
 	- Assigns the value of a variable on RHS side to the var on LHS
-		```
+		```make
 			CXX=g++
 		```
 
 - #### Immediate Assignment (`:=`)
 	- Evaluates the RHS side immediately and assigns it to the var on LHS.
-		```
+		```make
 			SOURCES := $(wildcard *.cpp)
 		```
 
@@ -149,11 +149,11 @@
 
 - #### Conditional Assignment (`?=`)
 	- Assigns value of RHS to var on LHS only if LHS is not previously defined.
-		```
+		```make
 			CXX ?= g++
 		```
 	- If `CXX` is already previous set to empty or to some other value the above code will not be run.
-		```
+		```make
 			CXX = clang++ 		// CXX holds value clang++
 			..
 			..
@@ -163,21 +163,21 @@
 
 - #### Appending (`+=`)
 	- Appends the value on the RHS to the current value of LHS.
-		```
+		```make
 			CXXFLAGS = -O2
 			CXXFLAGS += -Wall -Wextra   	// CXXFLAGS = -O2 -Wall -Wextra
 		```
 
 - #### Run Shell (`!=`)
 	- Run the RHS as a shell command in a sub-shell and assigns the result to LHS.
-		```
+		```make
 			SOURCES != find src/ -name '*.cpp'
 		```
 
 - #### (`$^`)
 	- It expands to the list of dependancies of target.
 	- `$^ --> foo.o bar.o baz.o`
-		```
+		```make
 		myprog: foo.o bar.o baz.o
 	    gcc $^ -o $@
 		```
@@ -185,7 +185,7 @@
 - #### (`$<`)
 	- It expands to the 1st dependancy of target.
 	- `$< --> foo.o`
-		```
+		```make
 		myprog: foo.o bar.o baz.o
 	    gcc $< -o $@
 		```
@@ -193,7 +193,7 @@
 - #### (`$@`)
 	- It expands to the name of the target file.
 	- `$@ --> myprog`
-		```
+		```make
 		myprog: foo.o bar.o baz.o
 	    gcc $< -o $@
 		```
@@ -204,7 +204,7 @@
 
 - #### Wildcard (`% * wildcard`)
 	- It expands to the name of the target file.
-		```
+		```make
 		%.o: %.c
 			gcc -c $< -o $@
 
@@ -212,12 +212,12 @@
 			gcc $^ -o myprog
 		```
 	- `*` wildcard in the target matches any characters before the txt extension, so the target newdir/*txt will match `newdir/file1.txt` and `newdir/file2.txt`
-		```
+		```make
 		newdir/*txt: *.txt
 			cp $< $@
 		```
 	- `%` wildcard in the target matches any string of characters before the .doc extension, so the target %.exe will match file1.exe and file2.exe.
-		```
+		```make
 		%.exe: %.doc
 	    	gcc $< -o $@
 		```
@@ -229,21 +229,21 @@
 
 - #### Tabs
 	- Don't use tabs use `>` as a block char
-		```
+		```make
 		ifeq ($(origin .RECIPEPREFIX), undefined)
 	    	$(error This Make does not support .RECIPEPREFIX. Please use GNU Make 4.0 or later)
 		endif
 		.RECIPEPREFIX = >
 		```
 	- The version check is NOT neccessary but is good to have. With the above change:
-		```
+		```make
 		hello:
 			echo "Hello"
 			echo "world"
 		.PHONY: hello
 		```
 		Would look like:
-		```
+		```make
 		hello:
 		> echo "Hello"
 		> echo "world"
@@ -252,36 +252,36 @@
 
 - #### Specify Shell
 	- Use recent `bash`, make by default uses `/bin/sh`. Point is to specify a specific shell.
-		```
+		```make
 		SHELL := bash
 		```
 
 - #### Use Shell flags
 	- Use the following flags to perform error check that the shell gives you.
-		```
+		```make
 		.SHELLFLAGS := -eu -o pipefail -c
 		```
 
 - #### Change some Make Defaults
 	- Use `.ONESHELL` it ensures that the make recipie is ran as single shell session, rather than 1 new shell per line.
-		```
+		```make
 		.ONESHELL
 		```
 	- Use `.DELETE_ON_ERROR` if a make rule fails, its target file is deleted.
-		```
+		```make
 		.DELETE_ON_ERROR
 		```
 	- Get a warning if we are refering to make variables that dont exsists.
-		```
+		```make
 		MAKEFLAGS += --warn-undefined-variables
 		```
 	- [OPTIONAL] Removes built in rules, which means we need to specify everything.
-		```
+		```make
 		MAKEFLAGS += --no-builtin-rules
 		```
 
 - #### TL;DR
-	```
+	```make
 	SHELL := bash
 	.ONESHELL:
 	.DELETE_ON_ERROR:
