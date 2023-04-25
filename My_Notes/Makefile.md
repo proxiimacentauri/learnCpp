@@ -293,3 +293,8 @@
 	endif
 	.RECIPEPREFIX = >
 	```
+
+- ## Multi-Threaded `make`
+	- `make -j 16 --output-sync=recurse`
+- ### Reference
+	> https://www.gnu.org/software/make/manual/html_node/Parallel-Output.html#Parallel-Output
