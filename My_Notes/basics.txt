@@ -1,0 +1,57 @@
+Bjarne Stroustrup began developing C++ in 1979 and currently – not surprisingly – is considered the most important authority in this field.
+
+Lexicon - The symbols (letters, digits, punctuation marks, and so on) could be used in the language. 
+Language - The appropriate ways of collating the symbols 
+Semantics - To recognize the meaning of every statement expressed in the given language
+
+Any program we write must be error-free in these three ways: lexically, syntactically and semantically.
+
+Compilation - The process of translating from a high-level language into a machine language.
+
+Source code is written into a file: foo.cpp
+Some platforms may prefer other suffixes like cc, cp, cxx, c++ or even C (note that this is a capital letter)
+
+Next, your source code needs to be compiled. 
+To do this you need to run an appropriate compiler and instruct it where you stored the source code you want it to translate into machine language.
+If the compiler doesn't find any mistakes in your source, the result will be a file containing your program translated into machine language. 
+
+That file is commonly called an executable file. The name of the file depends on the compiler you use and the operating system you are working with.
+
+If foo.cpp is compiled on the below systems:
+
+Unix/Linux system create an output file named "a.out" by default
+
+MS Windows can name the same name to this file as the source file, while only changing the suffix from .cpp to .exe
+
+The source code might be huge and divided among several or even dozens of source files.
+It may also be that the program was not written by you alone, but by a whole team, in which case the division of sources into multiple files is simply a must.
+In this case, the compiling process splits into two phases: a compilation of your source in order to translate it into machine language and a joining (or gluing) 
+of your executable code with the executable code derived from the other developers into a single and unified product
+
+
+Linking - The phase of "gluing" the different executable codes
+
+To get into C++: https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list
+Online Shell: http://cpp.sh/
+Standardization: https://isocpp.org/std
+
+
+
+# (hash) - preprocessor directive
+
+- It’s a separate part of the compiler whose task is to pre-read the text of the program and make some modifications in it.
+- The prefix "pre" suggests that these operations are performed before the full processing (compilation) takes place.
+- The changes the preprocessor will introduce are fully controlled by its directives
+- The include directive replaces the directive with the content of the file whose name is listed in the directive (iostream)
+- The changes made by the preprocessor never modify the content of your source file in any way. 
+- Any alterations are made on a volatile copy of your program that disappears immediately after the compiler finishes its work.
+
+Header files
+- A set of preliminary information that the compiler needs is included in header files.
+- These files contain a collection of preliminary information about ready-made blocks which can be used by a program to write text on the screen, or to read letters from the keyboard.
+- The compiler’s developers put a set of this anticipatory information in the iostream file.
+
+Namespace
+- Its an abstract container or environment created to hold a logical grouping of unique entities (blocks).
+- All elements of the standard C++ library are declared inside the namespace called 'std'.
+- If you want to use many of the standard C++ entities you must insert the using namespace instruction at the top of each file, outside of any function.
